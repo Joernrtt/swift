@@ -128,18 +128,24 @@ ul, ol {
 }
 
 .section__eyebrow {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: var(--space-3);
+  background: var(--color-accent-dim);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-bottom: var(--space-5);
 }
 
 .section__title {
   font-family: var(--font-display);
-  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-size: clamp(var(--text-3xl), 4.5vw, 4rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -188,8 +194,22 @@ ul, ol {
 }
 
 .btn--lg {
-  padding: var(--space-3) var(--space-8);
+  padding: var(--space-4) var(--space-10);
   font-size: var(--text-lg);
+  border-radius: 999px;
+}
+
+.btn--white {
+  background: #fff;
+  color: var(--color-accent);
+}
+
+.btn--white:hover,
+.btn--white:focus-visible {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+  outline: none;
 }
 
 /* =============================================
@@ -234,14 +254,31 @@ ul, ol {
 }
 
 .nav__link {
+  position: relative;
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-text-secondary);
   transition: color var(--transition-fast);
 }
 
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: width var(--transition-base);
+}
+
 .nav__link:hover {
-  color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.nav__link:hover::after {
+  width: 100%;
 }
 
 .nav__actions {
@@ -453,8 +490,12 @@ ul, ol {
   height: 560px;
   object-fit: cover;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  transform: rotate(1.5deg);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%),
+                      linear-gradient(to right, transparent 0%, black 20%);
+  -webkit-mask-composite: destination-in;
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%),
+              linear-gradient(to right, transparent 0%, black 20%);
+  mask-composite: intersect;
 }
 
 @media (max-width: 767px) {
@@ -628,10 +669,12 @@ ul, ol {
 }
 
 .product__feature {
+  position: relative;
   padding-block: var(--space-16);
   border-top: 1px solid var(--color-border);
   opacity: 0.35;
   transition: opacity var(--transition-slow);
+  overflow: hidden;
 }
 
 .product__feature:first-child {
@@ -644,7 +687,8 @@ ul, ol {
   opacity: 1;
 }
 
-.feature__num {
+/* Small accent step label (visible) */
+.feature__step {
   display: block;
   font-family: var(--font-display);
   font-size: var(--text-sm);
@@ -652,6 +696,21 @@ ul, ol {
   color: var(--color-accent);
   letter-spacing: 0.08em;
   margin-bottom: var(--space-4);
+}
+
+/* Large ghost number (decorative, behind) */
+.feature__num {
+  position: absolute;
+  bottom: var(--space-4);
+  right: -8px;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(37, 99, 235, 0.06);
+  user-select: none;
+  pointer-events: none;
 }
 
 .feature__title {
@@ -694,6 +753,10 @@ ul, ol {
   .product__feature:first-child {
     padding-top: var(--space-10);
     border-top: 1px solid var(--color-border);
+  }
+
+  .feature__num {
+    font-size: 4rem;
   }
 }
 
@@ -829,21 +892,6 @@ ul, ol {
   color: var(--color-text-muted);
 }
 
-/* Stats within platforms section */
-.platforms__stats {
-  margin-top: var(--space-16);
-  padding-top: var(--space-16);
-  border-top: 1px solid var(--color-border);
-}
-
-.platforms__stats-title {
-  font-family: var(--font-display);
-  font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: var(--space-12);
-}
 
 /* Badges */
 .badge {
@@ -890,6 +938,7 @@ ul, ol {
   flex-direction: column;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
@@ -937,6 +986,45 @@ ul, ol {
   .stats__grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* =============================================
+   STATS BREAK SECTION (dark)
+   ============================================= */
+.stats-break {
+  background: var(--color-text-primary);
+}
+
+.stats-break__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: var(--space-12);
+}
+
+.stats-break .stat {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--color-accent);
+}
+
+.stats-break .stat__label {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.stats-break .stat__number {
+  color: var(--color-accent);
+}
+
+.stats-break .stat__desc {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.stats-break .stat__icon {
+  color: rgba(255, 255, 255, 0.2);
 }
 
 /* =============================================
@@ -1076,12 +1164,23 @@ ul, ol {
    WAITLIST SECTION
    ============================================= */
 .waitlist {
-  background: linear-gradient(160deg, var(--color-surface-tint) 0%, var(--color-surface) 55%);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.waitlist::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
 }
 
 .waitlist__inner {
+  position: relative;
+  z-index: 1;
   text-align: center;
   max-width: 640px;
   margin-inline: auto;
@@ -1094,7 +1193,7 @@ ul, ol {
   letter-spacing: -0.025em;
   line-height: 1.15;
   margin-bottom: var(--space-10);
-  color: var(--color-text-primary);
+  color: #fff;
 }
 
 .waitlist__actions {
@@ -1106,16 +1205,16 @@ ul, ol {
 
 .waitlist__email {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .waitlist__email a {
-  color: var(--color-accent);
-  transition: color var(--transition-fast);
+  color: #fff;
+  transition: opacity var(--transition-fast);
 }
 
 .waitlist__email a:hover {
-  color: var(--color-accent-hover);
+  opacity: 0.8;
 }
 
 /* =============================================

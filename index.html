@@ -82,24 +82,28 @@
     <div class="product__sticky-wrap container">
       <div class="product__scroll-col">
         <div class="product__feature" data-step="1">
-          <span class="feature__num">01</span>
+          <span class="feature__step">01</span>
           <h3 class="feature__title">Erkennen</h3>
           <p class="feature__desc">Alle Kommentare zu einem Post werden erfasst und nach illegalen Inhalten geprüft (Fokus: deutsches Recht).</p>
+          <span class="feature__num" aria-hidden="true">01</span>
         </div>
         <div class="product__feature" data-step="2">
-          <span class="feature__num">02</span>
+          <span class="feature__step">02</span>
           <h3 class="feature__title">Durchsetzen</h3>
           <p class="feature__desc">Illegale Inhalte werden direkt auf der Plattform gemeldet. Die Antworten der Plattformen werden unmittelbar ausgewertet.</p>
+          <span class="feature__num" aria-hidden="true">02</span>
         </div>
         <div class="product__feature" data-step="3">
-          <span class="feature__num">03</span>
+          <span class="feature__step">03</span>
           <h3 class="feature__title">Eskalieren</h3>
           <p class="feature__desc">Wenn Plattformen nicht entfernen oder nicht reagieren, wird der Fall nach anwaltlicher Qualitätsprüfung an eine außergerichtliche Schlichtungsstelle nach DSA eskaliert.</p>
+          <span class="feature__num" aria-hidden="true">03</span>
         </div>
         <div class="product__feature" data-step="4">
-          <span class="feature__num">04</span>
+          <span class="feature__step">04</span>
           <h3 class="feature__title">Absichern</h3>
           <p class="feature__desc">Beweissicherung inklusive: Screenshots von Inhalt, Meldung und Antwort – nachvollziehbar dokumentiert.</p>
+          <span class="feature__num" aria-hidden="true">04</span>
         </div>
       </div>
       <div class="product__sticky-col">
@@ -195,48 +199,51 @@
         </div>
       </div>
 
-      <!-- Stats — 2×2 cards -->
-      <div class="platforms__stats">
-        <h3 class="platforms__stats-title reveal">Weniger Aufwand. Mehr Durchsetzung. Mehr Ruhe.</h3>
-        <div class="stats__grid">
+    </div>
+  </section>
 
-          <div class="stat reveal" data-target="230000" data-prefix="Mehr als ">
-            <span class="stat__label">Inhalte geprüft</span>
-            <div class="stat__body">
-              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><circle cx="112" cy="112" r="80"/><line x1="168.57" y1="168.57" x2="224" y2="224"/></svg>
-              <span class="stat__number" aria-live="polite">0</span>
-            </div>
-            <p class="stat__desc">Jeder Kommentar wird automatisch auf illegale Inhalte untersucht.</p>
+  <!-- STATS BREAK — dark full-bleed section -->
+  <section class="section stats-break">
+    <div class="container">
+      <h3 class="stats-break__title reveal">Weniger Aufwand. Mehr Durchsetzung. Mehr Ruhe.</h3>
+      <div class="stats__grid">
+
+        <div class="stat reveal" data-target="230000" data-prefix="Mehr als ">
+          <span class="stat__label">Inhalte geprüft</span>
+          <div class="stat__body">
+            <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><circle cx="112" cy="112" r="80"/><line x1="168.57" y1="168.57" x2="224" y2="224"/></svg>
+            <span class="stat__number" aria-live="polite">0</span>
           </div>
-
-          <div class="stat reveal" data-target="3600" data-prefix="Mehr als ">
-            <span class="stat__label">Inhalte bereits beseitigt</span>
-            <div class="stat__body">
-              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><polyline points="40 144 96 200 224 72"/></svg>
-              <span class="stat__number" aria-live="polite">0</span>
-            </div>
-            <p class="stat__desc">Erfolgreich von den Plattformen entfernte illegale Kommentare.</p>
-          </div>
-
-          <div class="stat reveal" data-target="10000" data-prefix="Mehr als ">
-            <span class="stat__label">Illegale Inhalte identifiziert</span>
-            <div class="stat__body">
-              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><path d="M128 24L24 192h208L128 24z"/><line x1="128" y1="104" x2="128" y2="152"/><circle cx="128" cy="176" r="4" fill="currentColor"/></svg>
-              <span class="stat__number" aria-live="polite">0</span>
-            </div>
-            <p class="stat__desc">Automatisch erkannte Verstöße gegen deutsches Recht.</p>
-          </div>
-
-          <div class="stat reveal" data-target="3500" data-prefix="Mehr als ">
-            <span class="stat__label">Fälle an Schlichtungsstelle eskaliert</span>
-            <div class="stat__body">
-              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><line x1="128" y1="40" x2="128" y2="216"/><line x1="48" y1="56" x2="208" y2="56"/><path d="M48 56 L16 136 a64 64 0 0 0 128 0 L112 56"/><path d="M144 56 L128 136 a64 64 0 0 0 128 0 L240 56"/></svg>
-              <span class="stat__number" aria-live="polite">0</span>
-            </div>
-            <p class="stat__desc">Fälle, die nach DSA Art. 21 außergerichtlich eskaliert wurden.</p>
-          </div>
-
+          <p class="stat__desc">Jeder Kommentar wird automatisch auf illegale Inhalte untersucht.</p>
         </div>
+
+        <div class="stat reveal" data-target="3600" data-prefix="Mehr als ">
+          <span class="stat__label">Inhalte bereits beseitigt</span>
+          <div class="stat__body">
+            <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><polyline points="40 144 96 200 224 72"/></svg>
+            <span class="stat__number" aria-live="polite">0</span>
+          </div>
+          <p class="stat__desc">Erfolgreich von den Plattformen entfernte illegale Kommentare.</p>
+        </div>
+
+        <div class="stat reveal" data-target="10000" data-prefix="Mehr als ">
+          <span class="stat__label">Illegale Inhalte identifiziert</span>
+          <div class="stat__body">
+            <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><path d="M128 24L24 192h208L128 24z"/><line x1="128" y1="104" x2="128" y2="152"/><circle cx="128" cy="176" r="4" fill="currentColor"/></svg>
+            <span class="stat__number" aria-live="polite">0</span>
+          </div>
+          <p class="stat__desc">Automatisch erkannte Verstöße gegen deutsches Recht.</p>
+        </div>
+
+        <div class="stat reveal" data-target="3500" data-prefix="Mehr als ">
+          <span class="stat__label">Fälle an Schlichtungsstelle eskaliert</span>
+          <div class="stat__body">
+            <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><line x1="128" y1="40" x2="128" y2="216"/><line x1="48" y1="56" x2="208" y2="56"/><path d="M48 56 L16 136 a64 64 0 0 0 128 0 L112 56"/><path d="M144 56 L128 136 a64 64 0 0 0 128 0 L240 56"/></svg>
+            <span class="stat__number" aria-live="polite">0</span>
+          </div>
+          <p class="stat__desc">Fälle, die nach DSA Art. 21 außergerichtlich eskaliert wurden.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -357,7 +364,7 @@
     <div class="container waitlist__inner">
       <h2 class="waitlist__title reveal">Setz dich auf die Waitlist für Cliena</h2>
       <div class="waitlist__actions reveal">
-        <a href="mailto:waitlist@schutz.digital" class="btn btn--accent btn--lg">Für die Waitlist anmelden</a>
+        <a href="mailto:waitlist@schutz.digital" class="btn btn--white btn--lg">Für die Waitlist anmelden</a>
         <p class="waitlist__email"><a href="mailto:waitlist@schutz.digital">waitlist@schutz.digital</a></p>
       </div>
     </div>
