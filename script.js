@@ -6,6 +6,7 @@
     initStickyHeader();
     initRevealObserver();
     initStatCounters();
+    initPlatformTiles();
     initFaqAccordion();
     initSmoothScroll();
     initLangToggle();
@@ -143,7 +144,38 @@
   }
 
   /* --------------------------------------------------
-     5. FAQ ACCORDION
+     5. PLATFORM TILE ACCORDION
+  -------------------------------------------------- */
+  function initPlatformTiles() {
+    var toggles = document.querySelectorAll('.platform-tile__toggle');
+    if (!toggles.length) return;
+
+    toggles.forEach(function (toggle) {
+      var bodyId = toggle.getAttribute('aria-controls');
+      var body   = bodyId ? document.getElementById(bodyId) : null;
+      if (!body) return;
+
+      toggle.addEventListener('click', function () {
+        var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+          toggle.setAttribute('aria-expanded', 'false');
+          body.style.maxHeight = null;
+          body.addEventListener('transitionend', function handler() {
+            body.setAttribute('hidden', '');
+            body.removeEventListener('transitionend', handler);
+          });
+        } else {
+          body.removeAttribute('hidden');
+          toggle.setAttribute('aria-expanded', 'true');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  /* --------------------------------------------------
+     6. FAQ ACCORDION
   -------------------------------------------------- */
   function initFaqAccordion() {
     var items = document.querySelectorAll('.faq__item');
@@ -188,7 +220,7 @@
   }
 
   /* --------------------------------------------------
-     6. SMOOTH SCROLL — respect prefers-reduced-motion
+     7. SMOOTH SCROLL — respect prefers-reduced-motion
   -------------------------------------------------- */
   function initSmoothScroll() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -197,7 +229,7 @@
   }
 
   /* --------------------------------------------------
-     7. LANGUAGE TOGGLE (stub — EN copy pending)
+     8. LANGUAGE TOGGLE (stub — EN copy pending)
   -------------------------------------------------- */
   function initLangToggle() {
     var btn = document.getElementById('lang-toggle');

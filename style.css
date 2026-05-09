@@ -513,7 +513,7 @@ ul, ol {
 .platforms__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 @media (min-width: 640px) {
@@ -528,36 +528,51 @@ ul, ol {
   }
 }
 
-.platform-card {
+.platform-tile {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  overflow: hidden;
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
-.platform-card--live {
+.platform-tile--live {
   border-color: rgba(0, 212, 180, 0.3);
 }
 
-.platform-card--live:hover {
-  border-color: rgba(0, 212, 180, 0.6);
+.platform-tile--live:hover {
+  border-color: rgba(0, 212, 180, 0.5);
   box-shadow: var(--shadow-glow);
 }
 
-.platform-card--dev,
-.platform-card--planned {
-  opacity: 0.7;
+.platform-tile--dev,
+.platform-tile--planned {
+  opacity: 0.75;
 }
 
-.platform-card__top {
+.platform-tile__toggle {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.platform-tile__toggle:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.platform-tile__meta {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  margin-bottom: var(--space-5);
 }
 
-.platform-card__name {
+.platform-tile__name {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 700;
@@ -565,32 +580,77 @@ ul, ol {
   letter-spacing: -0.02em;
 }
 
-.platform-card--planned .platform-card__name {
+.platform-tile--planned .platform-tile__name {
   font-size: var(--text-xl);
 }
 
-.platform-card__sub {
-  font-size: var(--text-sm);
+.platform-tile__chevron {
+  flex-shrink: 0;
   color: var(--color-text-muted);
+  transition: transform var(--transition-base), color var(--transition-fast);
+  margin-top: 2px;
 }
 
-.platform-card__features {
+.platform-tile__toggle[aria-expanded="true"] .platform-tile__chevron {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+}
+
+.platform-tile__body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.platform-tile__body:not([hidden]) {
+  border-top: 1px solid var(--color-border);
+}
+
+.platform-tile__features {
+  padding: var(--space-5) var(--space-6) var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
 }
 
-.platform-card__features li {
+.platform-tile__features li {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
 }
 
-.platform-card__features li svg {
-  color: var(--color-accent);
+.platform-tile__features li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
   flex-shrink: 0;
+}
+
+.platform-tile__sub {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Stats within platforms section */
+.platforms__stats {
+  margin-top: var(--space-16);
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--color-border);
+}
+
+.platforms__stats-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: var(--space-12);
 }
 
 /* Badges */
@@ -625,12 +685,8 @@ ul, ol {
 }
 
 /* =============================================
-   STATS SECTION
+   STATS GRID (within platforms section)
    ============================================= */
-.stats {
-  background: var(--color-surface);
-}
-
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
