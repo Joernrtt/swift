@@ -10,6 +10,7 @@
     initFaqAccordion();
     initSmoothScroll();
     initLangToggle();
+    initStickyFeatureHighlight();
   });
 
   /* --------------------------------------------------
@@ -229,7 +230,30 @@
   }
 
   /* --------------------------------------------------
-     8. LANGUAGE TOGGLE (stub — EN copy pending)
+     8. STICKY FEATURE HIGHLIGHT
+  -------------------------------------------------- */
+  function initStickyFeatureHighlight() {
+    var features = document.querySelectorAll('.product__feature');
+    if (!features.length) return;
+
+    if (window.matchMedia('(max-width: 767px)').matches) return;
+
+    if (!('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          features.forEach(function (f) { f.classList.remove('is-active'); });
+          entry.target.classList.add('is-active');
+        }
+      });
+    }, { threshold: 0.5, rootMargin: '-10% 0px -40% 0px' });
+
+    features.forEach(function (feature) { observer.observe(feature); });
+  }
+
+  /* --------------------------------------------------
+     9. LANGUAGE TOGGLE (stub — EN copy pending)
   -------------------------------------------------- */
   function initLangToggle() {
     var btn = document.getElementById('lang-toggle');

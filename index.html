@@ -29,7 +29,7 @@
       </ul>
       <div class="nav__actions">
         <button class="nav__lang-toggle" id="lang-toggle" aria-label="Switch to English">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M247.16,199.dotnet M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-8,178.59A88.07,88.07,0,0,1,48.42,136H72a8,8,0,0,0,0-16H48.42A88.07,88.07,0,0,1,120,53.41V80a8,8,0,0,0,16,0V53.41A88.07,88.07,0,0,1,207.58,120H184a8,8,0,0,0,0,16h23.58A88.07,88.07,0,0,1,136,202.59V176a8,8,0,0,0-16,0Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-8,178.59A88.07,88.07,0,0,1,48.42,136H72a8,8,0,0,0,0-16H48.42A88.07,88.07,0,0,1,120,53.41V80a8,8,0,0,0,16,0V53.41A88.07,88.07,0,0,1,207.58,120H184a8,8,0,0,0,0,16h23.58A88.07,88.07,0,0,1,136,202.59V176a8,8,0,0,0-16,0Z"/></svg>
           English
         </button>
         <a href="#waitlist" class="btn btn--accent btn--sm">Zur Waitlist</a>
@@ -45,67 +45,74 @@
     <div class="hero__bg-grid" aria-hidden="true"></div>
     <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
     <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
-    <div class="hero__blob hero__blob--3" aria-hidden="true"></div>
     <div class="container hero__inner">
-      <div class="hero__badge reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,40H48A16,16,0,0,0,32,56v58.77c0,89.62,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.77,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg>
-        <span>Rechtskonform · DSA-konform · DSGVO-konform</span>
+      <div class="hero__left">
+        <p class="hero__caption reveal">
+          Bekämpfe Hassrede und illegale Inhalte in deinen Kommentarspalten – ohne jeden Kommentar einzeln zu melden. Cliena übernimmt den gesamten Durchsetzungsprozess: Finden, dokumentieren, melden, nachverfolgen, eskalieren.
+        </p>
+        <h1 class="hero__headline reveal">
+          Hassrede raus.<br>
+          Rechtsweg rein.<br>
+          <span class="text-accent">Mit einem Klick.</span>
+        </h1>
+        <div class="hero__cta reveal">
+          <a href="#waitlist" class="btn btn--accent btn--lg">Zur Waitlist</a>
+        </div>
       </div>
-      <h1 class="hero__headline reveal">
-        Hassrede raus.<br>
-        Rechtsweg rein.<br>
-        <span class="text-accent">Mit einem Klick.</span>
-      </h1>
-      <p class="hero__sub reveal">
-        Bekämpfe Hassrede und illegale Inhalte in deinen Kommentarspalten – ohne jeden Kommentar einzeln zu melden. Cliena übernimmt den gesamten Durchsetzungsprozess: Finden, dokumentieren, melden, nachverfolgen, eskalieren.
-      </p>
-      <div class="hero__cta reveal">
-        <a href="#waitlist" class="btn btn--accent btn--lg">Zur Waitlist</a>
+      <div class="hero__visual reveal">
+        <img
+          src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=700&q=80"
+          alt="Smartphone mit Social-Media-App"
+          loading="eager"
+          width="700"
+          height="560"
+        >
       </div>
     </div>
   </section>
 
-  <!-- PRODUCT -->
+  <!-- PRODUCT — sticky scroll -->
   <section class="section product" id="produkt">
     <div class="container">
       <div class="section__header">
         <p class="section__eyebrow reveal">Unser Produkt</p>
         <h2 class="section__title reveal">Was Cliena macht</h2>
       </div>
-      <ol class="product__steps" role="list">
-        <li class="product__step reveal">
-          <div class="step__number" aria-hidden="true">01</div>
-          <div class="step__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M229.66,218.34l-50.07-50.07a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.31ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
-          </div>
-          <h3 class="step__title">Erkennen</h3>
-          <p class="step__desc">Alle Kommentare zu einem Post werden erfasst und nach illegalen Inhalten geprüft (Fokus: deutsches Recht).</p>
-        </li>
-        <li class="product__step reveal">
-          <div class="step__number" aria-hidden="true">02</div>
-          <div class="step__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M237.33,106.21,61.41,31l-.16-.07a16,16,0,0,0-21.59,19.57l.07.18L72,121.64a7.93,7.93,0,0,1,0,12.72L39.73,205.29l-.07.18A16,16,0,0,0,48,224a16.15,16.15,0,0,0,6.59-1.43l.16-.07,175.92-75.21a16,16,0,0,0,0-29.08ZM55.89,209.7l.06-.17L88,138H136a8,8,0,0,0,0-16H88L55.95,46.47l.06-.17.08,0L226.64,120l.09,0Z"/></svg>
-          </div>
-          <h3 class="step__title">Durchsetzen</h3>
-          <p class="step__desc">Illegale Inhalte werden direkt auf der Plattform gemeldet. Die Antworten der Plattformen werden unmittelbar ausgewertet.</p>
-        </li>
-        <li class="product__step reveal">
-          <div class="step__number" aria-hidden="true">03</div>
-          <div class="step__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M239.06,105l-31.41-8.74L195.7,64.78A16,16,0,0,0,181.07,56H74.93A16,16,0,0,0,60.3,64.78L48.35,96.26,16.94,105A16,16,0,0,0,8,119.94V200a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V192h128v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V119.94A16,16,0,0,0,239.06,105ZM74.93,72H181.07l9.26,24H65.67ZM48,200H24V183.94l24-6.67Zm160,0V177.27l24,6.67V200Zm24-40.14-56-15.58a8,8,0,0,0-4.27,15.39L216,172v12H40V172l44.27-12.33a8,8,0,1,0-4.27-15.39L24,159.86V120l41.07-11.43.93,0H190l.93,0L232,120Z"/></svg>
-          </div>
-          <h3 class="step__title">Eskalieren</h3>
-          <p class="step__desc">Wenn Plattformen nicht entfernen oder nicht reagieren, wird der Fall nach anwaltlicher Qualitätsprüfung an eine außergerichtliche Schlichtungsstelle nach DSA eskaliert.</p>
-        </li>
-        <li class="product__step reveal">
-          <div class="step__number" aria-hidden="true">04</div>
-          <div class="step__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,160H48V56H208V200ZM80,84A12,12,0,1,1,92,96,12,12,0,0,1,80,84Zm96,0A12,12,0,1,1,164,96,12,12,0,0,1,176,84ZM80,148a12,12,0,1,1,12,12A12,12,0,0,1,80,148Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,176,148Z"/></svg>
-          </div>
-          <h3 class="step__title">Absichern</h3>
-          <p class="step__desc">Beweissicherung inklusive: Screenshots von Inhalt, Meldung und Antwort – nachvollziehbar dokumentiert.</p>
-        </li>
-      </ol>
+    </div>
+    <div class="product__sticky-wrap container">
+      <div class="product__scroll-col">
+        <div class="product__feature" data-step="1">
+          <span class="feature__num">01</span>
+          <h3 class="feature__title">Erkennen</h3>
+          <p class="feature__desc">Alle Kommentare zu einem Post werden erfasst und nach illegalen Inhalten geprüft (Fokus: deutsches Recht).</p>
+        </div>
+        <div class="product__feature" data-step="2">
+          <span class="feature__num">02</span>
+          <h3 class="feature__title">Durchsetzen</h3>
+          <p class="feature__desc">Illegale Inhalte werden direkt auf der Plattform gemeldet. Die Antworten der Plattformen werden unmittelbar ausgewertet.</p>
+        </div>
+        <div class="product__feature" data-step="3">
+          <span class="feature__num">03</span>
+          <h3 class="feature__title">Eskalieren</h3>
+          <p class="feature__desc">Wenn Plattformen nicht entfernen oder nicht reagieren, wird der Fall nach anwaltlicher Qualitätsprüfung an eine außergerichtliche Schlichtungsstelle nach DSA eskaliert.</p>
+        </div>
+        <div class="product__feature" data-step="4">
+          <span class="feature__num">04</span>
+          <h3 class="feature__title">Absichern</h3>
+          <p class="feature__desc">Beweissicherung inklusive: Screenshots von Inhalt, Meldung und Antwort – nachvollziehbar dokumentiert.</p>
+        </div>
+      </div>
+      <div class="product__sticky-col">
+        <div class="product__sticky-visual">
+          <img
+            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
+            alt="Smartphone in der Hand"
+            loading="lazy"
+            width="600"
+            height="500"
+          >
+        </div>
+      </div>
     </div>
   </section>
 
@@ -117,7 +124,6 @@
       </div>
 
       <div class="platforms__grid" role="list">
-
         <!-- TikTok -->
         <div class="platform-tile platform-tile--live reveal" role="listitem">
           <button class="platform-tile__toggle" aria-expanded="false" aria-controls="pt-tiktok">
@@ -139,7 +145,6 @@
             </ul>
           </div>
         </div>
-
         <!-- Meta -->
         <div class="platform-tile platform-tile--dev reveal" role="listitem">
           <button class="platform-tile__toggle" aria-expanded="false" aria-controls="pt-meta">
@@ -156,7 +161,6 @@
             <p class="platform-tile__sub">Facebook / Instagram</p>
           </div>
         </div>
-
         <!-- X -->
         <div class="platform-tile platform-tile--dev reveal" role="listitem">
           <button class="platform-tile__toggle" aria-expanded="false" aria-controls="pt-x">
@@ -173,7 +177,6 @@
             <p class="platform-tile__sub">Erweiterung auf weitere Plattformen in Arbeit.</p>
           </div>
         </div>
-
         <!-- Geplant -->
         <div class="platform-tile platform-tile--planned reveal" role="listitem">
           <button class="platform-tile__toggle" aria-expanded="false" aria-controls="pt-planned">
@@ -190,32 +193,51 @@
             <p class="platform-tile__sub">Posts können zur laufenden Kommentarüberwachung markiert werden.</p>
           </div>
         </div>
-
       </div>
 
-      <!-- Animated stats -->
+      <!-- Stats — 2×2 cards -->
       <div class="platforms__stats">
         <h3 class="platforms__stats-title reveal">Weniger Aufwand. Mehr Durchsetzung. Mehr Ruhe.</h3>
         <div class="stats__grid">
+
           <div class="stat reveal" data-target="230000" data-prefix="Mehr als ">
-            <span class="stat__number" aria-live="polite">0</span>
             <span class="stat__label">Inhalte geprüft</span>
+            <div class="stat__body">
+              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><circle cx="112" cy="112" r="80"/><line x1="168.57" y1="168.57" x2="224" y2="224"/></svg>
+              <span class="stat__number" aria-live="polite">0</span>
+            </div>
+            <p class="stat__desc">Jeder Kommentar wird automatisch auf illegale Inhalte untersucht.</p>
           </div>
+
           <div class="stat reveal" data-target="3600" data-prefix="Mehr als ">
-            <span class="stat__number" aria-live="polite">0</span>
             <span class="stat__label">Inhalte bereits beseitigt</span>
+            <div class="stat__body">
+              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><polyline points="40 144 96 200 224 72"/></svg>
+              <span class="stat__number" aria-live="polite">0</span>
+            </div>
+            <p class="stat__desc">Erfolgreich von den Plattformen entfernte illegale Kommentare.</p>
           </div>
+
           <div class="stat reveal" data-target="10000" data-prefix="Mehr als ">
-            <span class="stat__number" aria-live="polite">0</span>
             <span class="stat__label">Illegale Inhalte identifiziert</span>
+            <div class="stat__body">
+              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><path d="M128 24L24 192h208L128 24z"/><line x1="128" y1="104" x2="128" y2="152"/><circle cx="128" cy="176" r="4" fill="currentColor"/></svg>
+              <span class="stat__number" aria-live="polite">0</span>
+            </div>
+            <p class="stat__desc">Automatisch erkannte Verstöße gegen deutsches Recht.</p>
           </div>
+
           <div class="stat reveal" data-target="3500" data-prefix="Mehr als ">
-            <span class="stat__number" aria-live="polite">0</span>
             <span class="stat__label">Fälle an Schlichtungsstelle eskaliert</span>
+            <div class="stat__body">
+              <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="12" aria-hidden="true"><line x1="128" y1="40" x2="128" y2="216"/><line x1="48" y1="56" x2="208" y2="56"/><path d="M48 56 L16 136 a64 64 0 0 0 128 0 L112 56"/><path d="M144 56 L128 136 a64 64 0 0 0 128 0 L240 56"/></svg>
+              <span class="stat__number" aria-live="polite">0</span>
+            </div>
+            <p class="stat__desc">Fälle, die nach DSA Art. 21 außergerichtlich eskaliert wurden.</p>
           </div>
+
         </div>
       </div>
-
     </div>
   </section>
 
@@ -227,18 +249,43 @@
         <h2 class="section__title reveal">Warum Cliena</h2>
       </div>
       <div class="mehrwert__grid">
+
         <div class="mehrwert__block reveal">
-          <div class="mehrwert__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor"><path d="M239.06,105l-31.41-8.74L195.7,64.78A16,16,0,0,0,181.07,56H74.93A16,16,0,0,0,60.3,64.78L48.35,96.26,16.94,105A16,16,0,0,0,8,119.94V200a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V192h128v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V119.94A16,16,0,0,0,239.06,105ZM74.93,72H181.07l9.26,24H65.67ZM48,200H24V183.94l24-6.67Zm160,0V177.27l24,6.67V200Zm24-40.14-56-15.58a8,8,0,0,0-4.27,15.39L216,172v12H40V172l44.27-12.33a8,8,0,1,0-4.27-15.39L24,159.86V120l41.07-11.43.93,0H190l.93,0L232,120Z"/></svg>
+          <div class="mehrwert__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=700&q=80"
+              alt=""
+              loading="lazy"
+              width="700"
+              height="220"
+            >
           </div>
-          <p class="mehrwert__text">Cliena macht es möglich, deine Rechte konsequent durchzusetzen: automatisch, fristgerecht und prozesssicher – bis zur DSA-Schlichtung.</p>
+          <div class="mehrwert__content">
+            <div class="mehrwert__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M239.06,105l-31.41-8.74L195.7,64.78A16,16,0,0,0,181.07,56H74.93A16,16,0,0,0,60.3,64.78L48.35,96.26,16.94,105A16,16,0,0,0,8,119.94V200a16,16,0,0,0,16,16H48a16,16,0,0,0,16-16V192h128v8a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V119.94A16,16,0,0,0,239.06,105ZM74.93,72H181.07l9.26,24H65.67ZM48,200H24V183.94l24-6.67Zm160,0V177.27l24,6.67V200Zm24-40.14-56-15.58a8,8,0,0,0-4.27,15.39L216,172v12H40V172l44.27-12.33a8,8,0,1,0-4.27-15.39L24,159.86V120l41.07-11.43.93,0H190l.93,0L232,120Z"/></svg>
+            </div>
+            <p class="mehrwert__text">Cliena macht es möglich, deine Rechte konsequent durchzusetzen: automatisch, fristgerecht und prozesssicher – bis zur DSA-Schlichtung.</p>
+          </div>
         </div>
+
         <div class="mehrwert__block reveal">
-          <div class="mehrwert__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H168V56a40,40,0,0,0-80,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM104,56a24,24,0,0,1,48,0V80H104ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg>
+          <div class="mehrwert__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=700&q=80"
+              alt=""
+              loading="lazy"
+              width="700"
+              height="220"
+            >
           </div>
-          <p class="mehrwert__text">DSGVO-konform und datensparsam: Wir arbeiten mit minimalem Datenset. Keine unnötigen Daten, keine „Beratungsschattenakte" – ein klarer Durchsetzungs-Workflow.</p>
+          <div class="mehrwert__content">
+            <div class="mehrwert__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H168V56a40,40,0,0,0-80,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM104,56a24,24,0,0,1,48,0V80H104ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"/></svg>
+            </div>
+            <p class="mehrwert__text">DSGVO-konform und datensparsam: Wir arbeiten mit minimalem Datenset. Keine unnötigen Daten, keine „Beratungsschattenakte" – ein klarer Durchsetzungs-Workflow.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
