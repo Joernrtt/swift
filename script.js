@@ -5,12 +5,10 @@
     initMobileNav();
     initStickyHeader();
     initRevealObserver();
-    initStatCounters();
-    initPlatformTiles();
+    initMetricCounters();
     initFaqAccordion();
     initSmoothScroll();
     initLangToggle();
-    initStickyFeatureHighlight();
   });
 
   /* --------------------------------------------------
@@ -93,14 +91,14 @@
   }
 
   /* --------------------------------------------------
-     4. STAT COUNTER ANIMATION
+     4. METRIC COUNTER ANIMATION
   -------------------------------------------------- */
-  function initStatCounters() {
-    var stats = document.querySelectorAll('.stat[data-target]');
-    if (!stats.length) return;
+  function initMetricCounters() {
+    var metrics = document.querySelectorAll('[data-target]');
+    if (!metrics.length) return;
 
     if (!('IntersectionObserver' in window)) {
-      stats.forEach(function (stat) { finaliseCounter(stat); });
+      metrics.forEach(function (m) { finaliseCounter(m); });
       return;
     }
 
@@ -112,13 +110,12 @@
       });
     }, { threshold: 0.5 });
 
-    stats.forEach(function (stat) { observer.observe(stat); });
+    metrics.forEach(function (m) { observer.observe(m); });
   }
 
-  function animateCounter(statEl) {
-    var target   = parseInt(statEl.dataset.target, 10);
-    var prefix   = statEl.dataset.prefix || '';
-    var display  = statEl.querySelector('.stat__number');
+  function animateCounter(el) {
+    var target  = parseInt(el.dataset.target, 10);
+    var display = el.querySelector('.metric__number') || el.querySelector('.stat__number');
     if (!display) return;
 
     var duration = 1800;
@@ -130,53 +127,21 @@
       var elapsed  = now - start;
       var progress = Math.min(elapsed / duration, 1);
       var value    = Math.round(easeOut(progress) * target);
-      display.textContent = prefix + value.toLocaleString('de-DE');
+      display.textContent = value.toLocaleString('de-DE');
       if (progress < 1) requestAnimationFrame(tick);
     }
 
     requestAnimationFrame(tick);
   }
 
-  function finaliseCounter(statEl) {
-    var target  = parseInt(statEl.dataset.target, 10);
-    var prefix  = statEl.dataset.prefix || '';
-    var display = statEl.querySelector('.stat__number');
-    if (display) display.textContent = prefix + target.toLocaleString('de-DE');
+  function finaliseCounter(el) {
+    var target  = parseInt(el.dataset.target, 10);
+    var display = el.querySelector('.metric__number') || el.querySelector('.stat__number');
+    if (display) display.textContent = target.toLocaleString('de-DE');
   }
 
   /* --------------------------------------------------
-     5. PLATFORM TILE ACCORDION
-  -------------------------------------------------- */
-  function initPlatformTiles() {
-    var toggles = document.querySelectorAll('.platform-tile__toggle');
-    if (!toggles.length) return;
-
-    toggles.forEach(function (toggle) {
-      var bodyId = toggle.getAttribute('aria-controls');
-      var body   = bodyId ? document.getElementById(bodyId) : null;
-      if (!body) return;
-
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.getAttribute('aria-expanded') === 'true';
-
-        if (isOpen) {
-          toggle.setAttribute('aria-expanded', 'false');
-          body.style.maxHeight = null;
-          body.addEventListener('transitionend', function handler() {
-            body.setAttribute('hidden', '');
-            body.removeEventListener('transitionend', handler);
-          });
-        } else {
-          body.removeAttribute('hidden');
-          toggle.setAttribute('aria-expanded', 'true');
-          body.style.maxHeight = body.scrollHeight + 'px';
-        }
-      });
-    });
-  }
-
-  /* --------------------------------------------------
-     6. FAQ ACCORDION
+     5. FAQ ACCORDION
   -------------------------------------------------- */
   function initFaqAccordion() {
     var items = document.querySelectorAll('.faq__item');
@@ -221,7 +186,7 @@
   }
 
   /* --------------------------------------------------
-     7. SMOOTH SCROLL — respect prefers-reduced-motion
+     6. SMOOTH SCROLL — respect prefers-reduced-motion
   -------------------------------------------------- */
   function initSmoothScroll() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -230,30 +195,7 @@
   }
 
   /* --------------------------------------------------
-     8. STICKY FEATURE HIGHLIGHT
-  -------------------------------------------------- */
-  function initStickyFeatureHighlight() {
-    var features = document.querySelectorAll('.product__feature');
-    if (!features.length) return;
-
-    if (window.matchMedia('(max-width: 767px)').matches) return;
-
-    if (!('IntersectionObserver' in window)) return;
-
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          features.forEach(function (f) { f.classList.remove('is-active'); });
-          entry.target.classList.add('is-active');
-        }
-      });
-    }, { threshold: 0.5, rootMargin: '-10% 0px -40% 0px' });
-
-    features.forEach(function (feature) { observer.observe(feature); });
-  }
-
-  /* --------------------------------------------------
-     9. LANGUAGE TOGGLE (stub — EN copy pending)
+     7. LANGUAGE TOGGLE (stub — EN copy pending)
   -------------------------------------------------- */
   function initLangToggle() {
     var btn = document.getElementById('lang-toggle');
