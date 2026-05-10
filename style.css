@@ -955,7 +955,14 @@ ul, ol {
   font-size: var(--text-base);
   color: var(--color-text-secondary);
   line-height: 1.65;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.tl-step__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
 }
 
 .tl-step__tag {
