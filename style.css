@@ -149,6 +149,7 @@ ul, ol {
   line-height: 1.15;
   letter-spacing: -0.025em;
   color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
 }
 
 .text-accent {
