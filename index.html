@@ -104,43 +104,111 @@
     </div>
   </section>
 
-  <!-- PLATFORMS — clean status list -->
-  <section class="section platforms" id="erfolge">
+  <!-- HOW IT WORKS — platforms + snake flow -->
+  <section class="section how-it-works" id="erfolge">
     <div class="container">
       <div class="section__header">
-        <h2 class="section__title reveal">Was jetzt schon möglich ist</h2>
+        <h2 class="section__title reveal">Wie Cliena funktioniert</h2>
+        <p class="section__sub reveal">Von der Erkennung bis zur rechtlichen Durchsetzung — automatisiert.</p>
       </div>
-      <ul class="platform-list">
-        <li class="platform-row platform-row--live reveal">
-          <div class="platform-row__name">TikTok</div>
-          <div class="platform-row__features">
-            <span class="platform-tag">Teilen</span>
-            <span class="platform-tag">Scannen</span>
-            <span class="platform-tag">Melden</span>
-            <span class="platform-tag">Dashboard-Tracking</span>
+
+      <!-- Block 1: Platforms -->
+      <div class="hiw-block">
+        <h3 class="hiw-block__title reveal">Unterstützte Plattformen</h3>
+        <div class="platform-cards">
+          <div class="platform-card platform-card--live reveal">
+            <div class="platform-card__logo" data-platform="tiktok" aria-label="TikTok"></div>
+            <div class="platform-card__name">TikTok</div>
+            <span class="badge badge--live">Live</span>
           </div>
-          <span class="badge badge--live">Live</span>
-        </li>
-        <li class="platform-row reveal">
-          <div class="platform-row__name">Meta <span class="platform-row__sub">Facebook / Instagram</span></div>
-          <div class="platform-row__features"></div>
-          <span class="badge badge--dev">In Entwicklung</span>
-        </li>
-        <li class="platform-row reveal">
-          <div class="platform-row__name">X</div>
-          <div class="platform-row__features">
-            <span class="platform-row__note">Erweiterung auf weitere Plattformen in Arbeit.</span>
+          <div class="platform-card platform-card--live reveal">
+            <div class="platform-card__logo" data-platform="instagram" aria-label="Instagram"></div>
+            <div class="platform-card__name">Instagram</div>
+            <span class="badge badge--live">Live</span>
           </div>
-          <span class="badge badge--dev">In Entwicklung</span>
-        </li>
-        <li class="platform-row reveal">
-          <div class="platform-row__name">Periodische Überwachung</div>
-          <div class="platform-row__features">
-            <span class="platform-row__note">Posts können zur laufenden Kommentarüberwachung markiert werden.</span>
+          <div class="platform-card platform-card--ghost reveal">
+            <div class="platform-card__name platform-card__name--muted">Weitere Plattformen folgen</div>
           </div>
-          <span class="badge badge--planned">Geplant</span>
-        </li>
-      </ul>
+        </div>
+      </div>
+
+      <!-- Block 2: Workflow snake -->
+      <div class="hiw-block">
+        <h3 class="hiw-block__title reveal">Der Prozess</h3>
+        <div class="flow">
+          <!-- Step 1 -->
+          <div class="flow__step reveal" style="grid-column:1;grid-row:1">
+            <span class="flow__num">01</span>
+            <div class="flow__icon-slot" data-step="1"></div>
+            <h4 class="flow__title">Post eingeben</h4>
+            <p class="flow__desc">Manuell, per WhatsApp oder automatisch.</p>
+            <div class="flow__chips">
+              <span class="flow__chip">Dashboard</span>
+              <span class="flow__chip">WhatsApp</span>
+              <span class="flow__chip flow__chip--soon">Auto-Monitoring</span>
+            </div>
+          </div>
+          <!-- Connector 1→2 -->
+          <div class="flow__connector flow__connector--right" aria-hidden="true" style="grid-column:2;grid-row:1"></div>
+          <!-- Step 2 -->
+          <div class="flow__step reveal" style="grid-column:3;grid-row:1">
+            <span class="flow__num">02</span>
+            <div class="flow__icon-slot" data-step="2"></div>
+            <h4 class="flow__title">Kommentare scannen</h4>
+            <p class="flow__desc">Einmalig oder fortlaufend.</p>
+            <div class="flow__chips">
+              <span class="flow__chip">Einmaliger Scan</span>
+              <span class="flow__chip">Fortlaufend</span>
+            </div>
+          </div>
+          <!-- Connector 2→3 -->
+          <div class="flow__connector flow__connector--right" aria-hidden="true" style="grid-column:4;grid-row:1"></div>
+          <!-- Step 3 -->
+          <div class="flow__step reveal" style="grid-column:5;grid-row:1">
+            <span class="flow__num">03</span>
+            <div class="flow__icon-slot" data-step="3"></div>
+            <h4 class="flow__title">Inhalte bewerten</h4>
+            <p class="flow__desc">KI erkennt illegale Kommentare und sichert Beweise.</p>
+            <div class="flow__chips">
+              <span class="flow__chip">Beweissicherung</span>
+            </div>
+          </div>
+          <!-- Turn connector: L-shape on right side, col 5, row 2 -->
+          <div class="flow__turn" aria-hidden="true" style="grid-column:5;grid-row:2"></div>
+          <!-- Step 4 (right side of row 2, col 5) -->
+          <div class="flow__step reveal" style="grid-column:5;grid-row:3">
+            <span class="flow__num">04</span>
+            <div class="flow__icon-slot" data-step="4"></div>
+            <h4 class="flow__title">Meldung an Plattform</h4>
+            <p class="flow__desc">Vollständige Meldung mit Einreichungsnachweis.</p>
+            <div class="flow__chips">
+              <span class="flow__chip">Nachweis gespeichert</span>
+            </div>
+          </div>
+          <!-- Connector 4←5 -->
+          <div class="flow__connector flow__connector--left" aria-hidden="true" style="grid-column:4;grid-row:3"></div>
+          <!-- Step 5 -->
+          <div class="flow__step reveal" style="grid-column:3;grid-row:3">
+            <span class="flow__num">05</span>
+            <div class="flow__icon-slot" data-step="5"></div>
+            <h4 class="flow__title">Antwort abrufen</h4>
+            <p class="flow__desc">Plattformentscheidung im Dashboard sichtbar.</p>
+          </div>
+          <!-- Connector 5←6 -->
+          <div class="flow__connector flow__connector--left" aria-hidden="true" style="grid-column:2;grid-row:3"></div>
+          <!-- Step 6 -->
+          <div class="flow__step reveal" style="grid-column:1;grid-row:3">
+            <span class="flow__num">06</span>
+            <div class="flow__icon-slot" data-step="6"></div>
+            <h4 class="flow__title">Eskalation</h4>
+            <p class="flow__desc">Bei Nichtreaktion: Schlichtungsstelle nach DSA Art. 21.</p>
+            <div class="flow__chips">
+              <span class="flow__chip">DSA Art. 21</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

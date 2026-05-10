@@ -9,6 +9,7 @@
     initFaqAccordion();
     initSmoothScroll();
     initLangToggle();
+    initProcessHighlight();
   });
 
   /* --------------------------------------------------
@@ -195,7 +196,52 @@
   }
 
   /* --------------------------------------------------
-     7. LANGUAGE TOGGLE (stub — EN copy pending)
+     7. PROCESS STEP AUTO-HIGHLIGHT
+     On scroll into view, step 1 gets the hover highlight automatically.
+     It disappears as soon as the user hovers any other step.
+  -------------------------------------------------- */
+  function initProcessHighlight() {
+    var section = document.getElementById('erfolge');
+    if (!section) return;
+
+    var steps = section.querySelectorAll('.flow__step');
+    if (!steps.length) return;
+
+    var firstStep = steps[0];
+    var dismissed = false;
+    var highlightTimer = null;
+
+    /* Remove auto-highlight and stop responding once user takes over */
+    function dismiss() {
+      if (dismissed) return;
+      dismissed = true;
+      clearTimeout(highlightTimer);
+      firstStep.classList.remove('flow__step--auto-highlight');
+    }
+
+    steps.forEach(function (step, i) {
+      if (i === 0) return;
+      step.addEventListener('mouseenter', dismiss);
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting || dismissed) return;
+        /* Wait for reveal animation (~600ms) before adding highlight */
+        highlightTimer = setTimeout(function () {
+          if (!dismissed) firstStep.classList.add('flow__step--auto-highlight');
+        }, 650);
+        observer.unobserve(section);
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(section);
+  }
+
+  /* --------------------------------------------------
+     8. LANGUAGE TOGGLE (stub — EN copy pending)
   -------------------------------------------------- */
   function initLangToggle() {
     var btn = document.getElementById('lang-toggle');
