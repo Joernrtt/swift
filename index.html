@@ -104,7 +104,7 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS — platforms + snake flow -->
+  <!-- HOW IT WORKS — platform rail + timeline -->
   <section class="section how-it-works" id="erfolge">
     <div class="container">
       <div class="section__header">
@@ -112,100 +112,99 @@
         <p class="section__sub reveal">Von der Erkennung bis zur rechtlichen Durchsetzung — automatisiert.</p>
       </div>
 
-      <!-- Block 1: Platforms -->
+      <!-- Block 1: Platform status rail -->
       <div class="hiw-block">
-        <h3 class="hiw-block__title reveal">Unterstützte Plattformen</h3>
-        <div class="platform-cards">
-          <div class="platform-card platform-card--live reveal">
-            <div class="platform-card__logo" data-platform="tiktok" aria-label="TikTok"></div>
-            <div class="platform-card__name">TikTok</div>
-            <span class="badge badge--live">Live</span>
-          </div>
-          <div class="platform-card platform-card--live reveal">
-            <div class="platform-card__logo" data-platform="instagram" aria-label="Instagram"></div>
-            <div class="platform-card__name">Instagram</div>
-            <span class="badge badge--live">Live</span>
-          </div>
-          <div class="platform-card platform-card--ghost reveal">
-            <div class="platform-card__name platform-card__name--muted">Weitere Plattformen folgen</div>
+        <div class="plat-rail reveal">
+          <span class="plat-rail__label">Live auf</span>
+          <div class="plat-rail__items">
+            <span class="plat-item">
+              <span class="plat-item__dot" aria-hidden="true"></span>TikTok
+            </span>
+            <span class="plat-rail__sep" aria-hidden="true"></span>
+            <span class="plat-item">
+              <span class="plat-item__dot" aria-hidden="true"></span>Instagram
+            </span>
+            <span class="plat-rail__sep" aria-hidden="true"></span>
+            <span class="plat-item plat-item--ghost">+ Weitere Plattformen folgen</span>
           </div>
         </div>
       </div>
 
-      <!-- Block 2: Workflow snake -->
+      <!-- Block 2: Process timeline -->
       <div class="hiw-block">
         <h3 class="hiw-block__title reveal">Der Prozess</h3>
-        <div class="flow">
-          <!-- Step 1 -->
-          <div class="flow__step reveal" style="grid-column:1;grid-row:1">
-            <span class="flow__num">01</span>
-            <div class="flow__icon-slot" data-step="1"></div>
-            <h4 class="flow__title">Post eingeben</h4>
-            <p class="flow__desc">Manuell, per WhatsApp oder automatisch.</p>
-            <div class="flow__chips">
-              <span class="flow__chip">Dashboard</span>
-              <span class="flow__chip">WhatsApp</span>
-              <span class="flow__chip flow__chip--soon">Auto-Monitoring</span>
+        <div class="timeline">
+
+          <div class="tl-step reveal">
+            <div class="tl-step__aside">
+              <div class="tl-step__circle">01</div>
+              <div class="tl-step__line" aria-hidden="true"></div>
+            </div>
+            <div class="tl-step__body">
+              <h4 class="tl-step__title">Post eingeben</h4>
+              <p class="tl-step__desc">Manuell, per WhatsApp oder automatisch — Cliena übernimmt ab dem ersten Kommentar.</p>
+              <span class="tl-step__tag tl-step__tag--soon">Auto-Monitoring bald verfügbar</span>
             </div>
           </div>
-          <!-- Connector 1→2 -->
-          <div class="flow__connector flow__connector--right" aria-hidden="true" style="grid-column:2;grid-row:1"></div>
-          <!-- Step 2 -->
-          <div class="flow__step reveal" style="grid-column:3;grid-row:1">
-            <span class="flow__num">02</span>
-            <div class="flow__icon-slot" data-step="2"></div>
-            <h4 class="flow__title">Kommentare scannen</h4>
-            <p class="flow__desc">Einmalig oder fortlaufend.</p>
-            <div class="flow__chips">
-              <span class="flow__chip">Einmaliger Scan</span>
-              <span class="flow__chip">Fortlaufend</span>
+
+          <div class="tl-step reveal">
+            <div class="tl-step__aside">
+              <div class="tl-step__circle">02</div>
+              <div class="tl-step__line" aria-hidden="true"></div>
+            </div>
+            <div class="tl-step__body">
+              <h4 class="tl-step__title">Kommentare scannen</h4>
+              <p class="tl-step__desc">Alle Reaktionen unter dem Post werden erfasst — einmalig oder als laufende Überwachung.</p>
             </div>
           </div>
-          <!-- Connector 2→3 -->
-          <div class="flow__connector flow__connector--right" aria-hidden="true" style="grid-column:4;grid-row:1"></div>
-          <!-- Step 3 -->
-          <div class="flow__step reveal" style="grid-column:5;grid-row:1">
-            <span class="flow__num">03</span>
-            <div class="flow__icon-slot" data-step="3"></div>
-            <h4 class="flow__title">Inhalte bewerten</h4>
-            <p class="flow__desc">KI erkennt illegale Kommentare und sichert Beweise.</p>
-            <div class="flow__chips">
-              <span class="flow__chip">Beweissicherung</span>
+
+          <div class="tl-step reveal">
+            <div class="tl-step__aside">
+              <div class="tl-step__circle">03</div>
+              <div class="tl-step__line" aria-hidden="true"></div>
+            </div>
+            <div class="tl-step__body">
+              <h4 class="tl-step__title">Rechtliche Bewertung</h4>
+              <p class="tl-step__desc">KI klassifiziert jeden Kommentar nach deutschem Recht. Relevante Inhalte werden mit Screenshot und Zeitstempel gesichert.</p>
+              <span class="tl-step__tag">Beweissicherung</span>
             </div>
           </div>
-          <!-- Turn connector: L-shape on right side, col 5, row 2 -->
-          <div class="flow__turn" aria-hidden="true" style="grid-column:5;grid-row:2"></div>
-          <!-- Step 4 (right side of row 2, col 5) -->
-          <div class="flow__step reveal" style="grid-column:5;grid-row:3">
-            <span class="flow__num">04</span>
-            <div class="flow__icon-slot" data-step="4"></div>
-            <h4 class="flow__title">Meldung an Plattform</h4>
-            <p class="flow__desc">Vollständige Meldung mit Einreichungsnachweis.</p>
-            <div class="flow__chips">
-              <span class="flow__chip">Nachweis gespeichert</span>
+
+          <div class="tl-step reveal">
+            <div class="tl-step__aside">
+              <div class="tl-step__circle">04</div>
+              <div class="tl-step__line" aria-hidden="true"></div>
+            </div>
+            <div class="tl-step__body">
+              <h4 class="tl-step__title">Meldung an die Plattform</h4>
+              <p class="tl-step__desc">Cliena sendet eine vollständige Meldung direkt an TikTok oder Instagram — inklusive rechtssicherem Einreichungsnachweis.</p>
+              <span class="tl-step__tag">Einreichungsnachweis gespeichert</span>
             </div>
           </div>
-          <!-- Connector 4←5 -->
-          <div class="flow__connector flow__connector--left" aria-hidden="true" style="grid-column:4;grid-row:3"></div>
-          <!-- Step 5 -->
-          <div class="flow__step reveal" style="grid-column:3;grid-row:3">
-            <span class="flow__num">05</span>
-            <div class="flow__icon-slot" data-step="5"></div>
-            <h4 class="flow__title">Antwort abrufen</h4>
-            <p class="flow__desc">Plattformentscheidung im Dashboard sichtbar.</p>
-          </div>
-          <!-- Connector 5←6 -->
-          <div class="flow__connector flow__connector--left" aria-hidden="true" style="grid-column:2;grid-row:3"></div>
-          <!-- Step 6 -->
-          <div class="flow__step reveal" style="grid-column:1;grid-row:3">
-            <span class="flow__num">06</span>
-            <div class="flow__icon-slot" data-step="6"></div>
-            <h4 class="flow__title">Eskalation</h4>
-            <p class="flow__desc">Bei Nichtreaktion: Schlichtungsstelle nach DSA Art. 21.</p>
-            <div class="flow__chips">
-              <span class="flow__chip">DSA Art. 21</span>
+
+          <div class="tl-step reveal">
+            <div class="tl-step__aside">
+              <div class="tl-step__circle">05</div>
+              <div class="tl-step__line" aria-hidden="true"></div>
+            </div>
+            <div class="tl-step__body">
+              <h4 class="tl-step__title">Antwort auswerten</h4>
+              <p class="tl-step__desc">Die Plattformentscheidung wird automatisch abgerufen und im Dashboard dokumentiert.</p>
             </div>
           </div>
+
+          <div class="tl-step reveal">
+            <div class="tl-step__aside">
+              <div class="tl-step__circle">06</div>
+              <div class="tl-step__line" aria-hidden="true"></div>
+            </div>
+            <div class="tl-step__body">
+              <h4 class="tl-step__title">Eskalation</h4>
+              <p class="tl-step__desc">Reagiert die Plattform nicht oder unzureichend, eskaliert Cliena den Fall nach anwaltlicher Prüfung an eine anerkannte Schlichtungsstelle.</p>
+              <span class="tl-step__tag">DSA Art. 21</span>
+            </div>
+          </div>
+
         </div>
       </div>
 

@@ -204,7 +204,7 @@
     var section = document.getElementById('erfolge');
     if (!section) return;
 
-    var steps = section.querySelectorAll('.flow__step');
+    var steps = section.querySelectorAll('.tl-step');
     if (!steps.length) return;
 
     var firstStep = steps[0];
@@ -216,7 +216,7 @@
       if (dismissed) return;
       dismissed = true;
       clearTimeout(highlightTimer);
-      firstStep.classList.remove('flow__step--auto-highlight');
+      firstStep.classList.remove('tl-step--auto-highlight');
     }
 
     steps.forEach(function (step, i) {
@@ -231,7 +231,7 @@
         if (!entry.isIntersecting || dismissed) return;
         /* Wait for reveal animation (~600ms) before adding highlight */
         highlightTimer = setTimeout(function () {
-          if (!dismissed) firstStep.classList.add('flow__step--auto-highlight');
+          if (!dismissed) firstStep.classList.add('tl-step--auto-highlight');
         }, 650);
         observer.unobserve(section);
       });
